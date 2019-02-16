@@ -1,0 +1,36 @@
+<h1>Dance</h1>
+
+<h2>Make Me Dance</h2>
+
+<ul>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<ul>
+  {{#each cats}}
+    {{#if sleepy}}
+      {{> cats/cat-block sleep=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Gimme a Dance Move</h2>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="">Dance Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="sleepy">I Danced</label><br>
+    <input type="input" name="dance" value="1"> Dance<br>
+  </div>
+
+  <button type="submit">Add Dance Name</button>
+</form>
