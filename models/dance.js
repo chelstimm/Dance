@@ -19,9 +19,8 @@ var dance = {
         orm.updateOne("dances", objColVals, condition, function (res) {
             cb(res);
         });
-    }
-
-};
+    },
+}
 
 
 

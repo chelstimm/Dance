@@ -4,30 +4,30 @@
     <div class="container-fluid">
         <img src="assets/images/images.png" class="img-fluid" height="180px">
     </div>
-    <h2>Gimme a Fortnite Dance Move</h2>
-    <h5>[Hype, Floss, Take the L, Electro Shuffle, Freestyler]</h5>
+    <h2>Create a Fortnite Dance Party</h2>
+    <h5>[Hype, Floss, Take the L, Electro Shuffle, Freestyler, Etc]</h5>
     <br>
 
     <form class="create-form" action="/" method="POST">
 
         <div class="form-group">
-            <label for="">Dance Name:</label>
+            <label for="">Fortnite Dance Move:</label>
             <input type="text" id="dn" name="dance">
         </div>
 
-        <button class="add-dance btn" type="submit">Add Dance Name</button>
+        <button class="add-dance btn" type="submit">Add Moves</button>
     </form>
 </center>
 
 <div class="row">
     <div class="col-6-md">
-        <h2>Watch My Moves!</h2>
+        <h2>Add Dance Moves!</h2>
         {{> dances/dance-block}}
     </div>
 
 
     <div class="col-6-md">
-        <h2>Whew, That Was Fun!</h2>
+        <h2>Your Party Is Ready!</h2>
         {{> dances/dance-block-danced}}
     </div>
 </div>

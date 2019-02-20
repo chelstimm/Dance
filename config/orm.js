@@ -71,8 +71,10 @@ function objToSql(ob) {
 
       cb(result);
     });
-  }
+  },
+
 };
+
 
     //   // Run MySQL Query
     //   connection.query('INSERT INTO dances SET ?', {
