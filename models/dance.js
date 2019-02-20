@@ -3,21 +3,21 @@ var orm = require("../config/orm.js");
 
 var dance = {
 
-    selectAll: function (callback) {
-        orm.selectAll(function (res) {
-            callback(res);
+    selectAll: function (cb) {
+        orm.selectAll("dances", function (res) {
+            cb(res);
         });
     },
 
-    insertOne: function (dance_name, callback) {
-        orm.insertOne(dance_name, function (res) {
-            callback(res);
+    insertOne: function (cols, vals, cb) {
+        orm.insertOne("dances", cols, vals, function (res) {
+            cb(res);
         });
     },
 
-    updateOne: function (dance_id, callback) {
-        orm.updateOne(dance_id, function (res) {
-            callback(res);
+    updateOne: function (objColVals, condition, cb) {
+        orm.updateOne("dances", objColVals, condition, function (res) {
+            cb(res);
         });
     }
 

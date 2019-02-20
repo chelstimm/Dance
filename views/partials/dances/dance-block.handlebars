@@ -1,3 +1,5 @@
+<ul>
+
 {{#each dances}}
 	{{#unless this.queued}}
 		<div class="dance-div">
@@ -6,11 +8,14 @@
 					{{this.dance}}
 				</div>
 				<div class="col-3-md">
-					<button class="change-dance btn-sm" data-id="{{this.id}}" data-newdance="{{this.queued}}">
-						Watch My Moves!
-					</button>
+			
+                      <form action="/{{this.id}}?_method=PUT" method="POST">
+			          <input type="hidden" name="queued" value="true">
+			          <button class="change-dance btn-sm" data-id="{{this.id}}" data-newdance="{{this.queued}}">Turn Up the Beat!</button>
+			        </form>
 				</div>
 			</div>
 		</div>
 	{{/unless}}
 {{/each}}
+</ul>

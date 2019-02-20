@@ -1,5 +1,7 @@
 var express = require('express');
 var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
+
 var PORT = process.env.PORT || 8080;
 var app = express();
 
@@ -11,9 +13,9 @@ app.use(express.static('assets/images'));
 
 // parse body
 app.use(bodyParser.urlencoded({
-    extended: true
+    extended:false
 }));
-app.use(bodyParser.json());
+app.use(methodOverride("_method"));
 
 // setup handlebars
 var expresshb = require('express-handlebars');
@@ -24,7 +26,7 @@ app.set('view engine', 'handlebars');
 
 // import routes
 var routes = require('./controllers/dance_controller.js');
-app.use(routes);
+app.use("/", routes);
 
 
     // start server

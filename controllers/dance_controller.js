@@ -13,44 +13,34 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/api/dances", function(req, res) {
-  dance.create([
+router.post("/", function(req, res) {
+  dance.insertOne([
     "dance", "queued"
   ], [
     req.body.dance, req.body.queued
-  ], function(result) {
+  ], function() {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+    res.redirect("/");
   });
 });
 
-router.put("/api/dances/:id", function(req, res) {
+router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   console.log("condition", condition);
 
-  dance.update({
+  dance.updateOne({
     queued: req.body.queued
-  }, condition, function(result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  }, condition, function() {
+        res.redirect("/");
   });
 });
 
-router.delete("/api/dances/:id", function(req, res) {
+router.delete("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  dance.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  dance.delete(condition, function() {
+   res.redirect("/");
   });
 });
 
