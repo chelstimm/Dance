@@ -1,0 +1,16 @@
+{{#each dances}}
+	{{#unless this.queued}}
+		<div class="dance-div">
+			<div class="row">
+				<div class="col-md-7 col-7">
+					{{this.dance}}
+				</div>
+				<div class="col-md-3 col-3">
+					<button class="change-dance btn-sm" data-id="{{this.id}}" data-newdance="{{this.queued}}">
+						Watch My Moves!
+					</button>
+				</div>
+			</div>
+		</div>
+	{{/unless}}
+{{/each}}

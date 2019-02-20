@@ -1,24 +1,33 @@
 var express = require('express');
+var bodyParser = require("body-parser");
 var PORT = process.env.PORT || 8080;
 var app = express();
 
 // serve static content
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
+
+//images
+app.use(express.static('assets/images'));
 
 // parse body
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
 // setup handlebars
 var expresshb = require('express-handlebars');
-app.engine('handlebars', expresshb({ defaultLayout: 'main' }));
+app.engine('handlebars', expresshb({
+    defaultLayout: 'main'
+}));
 app.set('view engine', 'handlebars');
 
 // import routes
-const routes = require('./controllers/dance_controller.js');
+var routes = require('./controllers/dance_controller.js');
 app.use(routes);
 
-// start server
-app.listen(PORT, function() {
-    console.log('DANCES ready at http://localhost:' + PORT);
-})
+
+    // start server
+    app.listen(PORT, function () {
+        console.log('DANCES ready at http://localhost:' + PORT);
+    });

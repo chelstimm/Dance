@@ -1,0 +1,28 @@
+img {
+    content: url('/dance/public/assets/images/images.png') no-repeat;
+    width: 364px;
+    height: 138px;
+  }
+
+h1, h2, h3, h4, h5, label {
+    color: white;
+    font-family: monospace;
+}
+
+.container-fluid {
+    background-color: white;
+}
+
+.card-body {
+    border: 2 solid white;
+    background-color: transparent;
+}
+
+.card-text {
+    color: white;
+    font-family: monospace;
+}
+
+button {
+    color: darkmagenta;
+}

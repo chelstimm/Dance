@@ -2,33 +2,28 @@
 var orm = require("../config/orm.js");
 
 var dance = {
-  all: function(cb) {
-    orm.all("dances", function(res) {
-      cb(res);
-    });
-  },
-  // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
-    orm.create("dances", cols, vals, function(res) {
-      cb(res);
-    });
-  },
-  update: function(objColVals, condition, cb) {
-    orm.update("dances", objColVals, condition, function(res) {
-      cb(res);
-    });
-  },
-  delete: function(condition, cb) {
-    orm.delete("dances", condition, function(res) {
-      cb(res);
-    });
-  }
-}
+
+    selectAll: function (callback) {
+        orm.selectAll(function (res) {
+            callback(res);
+        });
+    },
+
+    insertOne: function (dance_name, callback) {
+        orm.insertOne(dance_name, function (res) {
+            callback(res);
+        });
+    },
+
+    updateOne: function (dance_id, callback) {
+        orm.updateOne(dance_id, function (res) {
+            callback(res);
+        });
+    }
+
+};
+
 
 
 // Export the database functions for the controller (catsController.js).
 module.exports = dance;
-
-
-
-// var matches = function match()

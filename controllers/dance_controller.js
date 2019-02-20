@@ -1,13 +1,10 @@
 var express = require("express");
-
 var router = express.Router();
-
-// Import the model (cat.js) to use its database functions.
 var dance = require("../models/dance.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
- dance.all(function(data) {
+ dance.selectAll(function(data) {
     var hbsObject = {
       dances: data
     };
@@ -18,9 +15,9 @@ router.get("/", function(req, res) {
 
 router.post("/api/dances", function(req, res) {
   dance.create([
-    "name", "danced"
+    "dance", "queued"
   ], [
-    req.body.name, req.body.danced
+    req.body.dance, req.body.queued
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
@@ -33,7 +30,7 @@ router.put("/api/dances/:id", function(req, res) {
   console.log("condition", condition);
 
   dance.update({
-    danced: req.body.danced
+    queued: req.body.queued
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

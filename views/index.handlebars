@@ -1,36 +1,38 @@
-<h1>Dance</h1>
+<center>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <img src="assets/images/images.png" class="img-fluid" height="180px">
+    </div>
+    <h2>Gimme a Fortnite Dance Move</h2>
+    <h5>[Hype, Floss, Take the L, Electro Shuffle, Freestyler]</h5>
+    <br>
 
-<h2>Make Me Dance</h2>
+    <form class="create-form">
 
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+        <div class="form-group">
+            <label for="">Dance Name:</label>
+            <input type="text" id="dn" name="name">
+        </div>
 
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Gimme a Dance Move</h2>
-
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="">Dance Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-
-  <div class="form-group">
-    <label for="sleepy">I Danced</label><br>
-    <input type="input" name="dance" value="1"> Dance<br>
-  </div>
-
-  <button type="submit">Add Dance Name</button>
-</form>
+        <button class="add-dance btn" type="submit">Add Dance Name</button>
+    </form>
+</center>
+<div class="col-12">
+    <div class="col-6">
+        <h2 class="card-header text-center">Ready to watch my dance moves!</h2>
+        <div class="card-body">
+            <div class="card-text">
+                {{> dances/dance-block}}
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <h2 class="card-header text-center py-4">Danced My Heart Out!</h2>
+        <div class="card-body">
+            <div class="card-text">
+                {{> dances/dance-block-danced}}
+            </div>
+        </div>
+    </div>
+</div>
