@@ -18,20 +18,30 @@
         <button class="add-dance btn" type="submit">Add Dance Name</button>
     </form>
 </center>
-<div class="col-12">
-    <div class="col-6">
-        <h2 class="card-header text-center">Ready to watch my dance moves!</h2>
-        <div class="card-body">
-            <div class="card-text">
-                {{> dances/dance-block}}
+
+<div class="box">
+    <div class="float-left">
+        <div class="col-6-md">
+            <div class="card">
+                <h2 class="card-header text-left">Let's Dance!</h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{> dances/dance-block}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-6">
-        <h2 class="card-header text-center py-4">Danced My Heart Out!</h2>
-        <div class="card-body">
-            <div class="card-text">
-                {{> dances/dance-block-danced}}
+
+    <div class="float-right">
+        <div class="col-6-md">
+            <div class="card">
+                <h2 class="card-header text-right">Gimme a Towel!</h2>
+                <div class="card-body">
+                    <div class="card-text">
+                        {{> dances/dance-block-danced}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
