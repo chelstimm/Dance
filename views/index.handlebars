@@ -5,14 +5,14 @@
         <img src="assets/images/images.png" class="img-fluid" height="180px">
     </div>
     <h2>Create a Fortnite Dance Party</h2>
-    <h5>[Hype, Floss, Take the L, Electro Shuffle, Freestyler, Etc]</h5>
     <br>
 
     <form class="create-form" action="/" method="POST">
 
         <div class="form-group">
-            <label for="">Fortnite Dance Move:</label>
+            <label for="">Add A Fortnite Dance Move:</label>
             <input type="text" id="dn" name="dance">
+            
         </div>
 
         <button class="add-dance btn" type="submit">Add Moves</button>
@@ -21,13 +21,15 @@
 
 <div class="row">
     <div class="col-6-md">
-        <h2>Add Dance Moves!</h2>
+        <h3>List of Fortnite Dance Moves:</h3>
+        <h5>Select the Moves You Want to Add to Your Party</h5>
         {{> dances/dance-block}}
     </div>
 
 
     <div class="col-6-md">
         <h2>Your Party Is Ready!</h2>
+        <h5>Selected Dance Moves to Get Your Party Started</h5>
         {{> dances/dance-block-danced}}
     </div>
 </div>
