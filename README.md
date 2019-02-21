@@ -1,4 +1,4 @@
-# Dance
+# Fortnite Dance App
 Create a Fortnite Dance Party by adding different Fortnite moves. Add your favorites and then select the dance moves you want to use to get your party started!
 ![](/assets/images/fortnite_dance_app.png)
 ## What this project does
