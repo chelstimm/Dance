@@ -3,6 +3,8 @@ Create a Fortnite Dance Party by adding different Fortnite moves. Add your favor
 
 ![](assets/images/fortnite_dance_app.png)
 
+        Dance/public/assets/images/fortnite_dance_app.png
+      
 ## What this project does
 This project usess MySQL, Node, Express, Handlebars, and a homemade ORM. Node and MySQL is used to query and route data in the app. Handlebars is used to generate the HTML. The ORM is used to query and manipulate data from the database using JavaScript rather than SQL.
 
