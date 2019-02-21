@@ -10,6 +10,7 @@ This project usess MySQL, Node, Express, Handlebars, and a homemade ORM. Node an
 
 ## How users can get started with this project
 Open Fortnite Dance Party
+ [Open](https://glacial-thicket-20564.herokuapp.com/)
 
 Create your Dance Party with the moves you've added on the left. "Turn up the Beat" and add it to your party dance list. 
 
